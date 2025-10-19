@@ -1,6 +1,7 @@
 import threading
 import time 
 
+# function
 def prepare_chai(type_,wait_time):
     print(f"{type_} chai is brewing...")
     time.sleep(wait_time)
