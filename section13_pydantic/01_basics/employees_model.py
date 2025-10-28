@@ -1,6 +1,6 @@
-from typing import Optional 
-from pydantic import BaseModel,Field
-import re
+from typing import Optional
+from pydantic import BaseModel, Field
+
 class Employee(BaseModel):
     id: int
     name: str = Field(
@@ -8,33 +8,37 @@ class Employee(BaseModel):
         min_length=3,
         max_length=50,
         description="Employee Name",
-        examples="Hiesh Choudhary"
+        examples=["Hiesh Choudhary"]
     )
-    department: Optional[str] = 'General'
+    department: Optional[str] = "General"
     salary: float = Field(
         ...,
         ge=1000,
-        le=1000000,
-        description="Auunal salart in usd"
+        le=1_000_000,
+        description="Annual salary in USD"
     )
-    
-    
+
+
 class User(BaseModel):
-    email:str = Field(
+    email: str = Field(
         ...,
-        regex=r''
+        pattern=r'^[\w\.-]+@[\w\.-]+\.\w+$',
+        description="Valid email address"
     )
-    phone: str = Field(..., regex=r'')
+    phone: str = Field(
+        ...,
+        pattern=r'^\+?\d{10,15}$',
+        description="Phone number with optional + and 10–15 digits"
+    )
     age: int = Field(
         ...,
         ge=0,
         le=150,
-        description="Age in years ",    
+        description="Age in years"
     )
     discount: float = Field(
         ...,
         ge=0,
         le=1000,
-        description="Discount Percentage",
+        description="Discount percentage"
     )
-    
