@@ -1,4 +1,4 @@
-from pydantic import BaseModel,computed_field, Field 
+from pydantic import BaseModel, computed_field, Field 
 
 class Product(BaseModel):
     price: float
@@ -31,4 +31,3 @@ booking = Booking(
      
 print(booking.total_amount)
 print(booking.model_dump())
-
