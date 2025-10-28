@@ -8,6 +8,7 @@ class Comment(BaseModel):
 
 Comment.model_rebuild()
 
+
 comment = Comment(
     id=1,
     content="First Comment",
