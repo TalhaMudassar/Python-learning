@@ -1,16 +1,25 @@
-list_1 =[1,2,3,4,5,5,4,3,6,7,8,9,10,10]
+# difference in lists:
 
-def removedupliate(list1):
-    for i in list1:
-        j=i+1
-        for j in list1:
-            if i==j:
-                list1.remove(j)
-                break
-            else:
-                continue
+
+list_1 = [1,3,5,7,9]
+list_2 = [1,2,4,6,7,8]
+differ_list = []
+
+for i in list_1:
+    for j in list_2:
+        if i == j:
+            pass
+        else:
+            differ_list.append(i)
+            break
             
-removedupliate(list_1)
-
-print(list_1)
-    
+for i in list_2:
+    for j in list_1:
+        if i == j:
+            pass
+        else:
+            differ_list.append(i)
+            break
+        
+        
+print(f"Updated list {differ_list}")
