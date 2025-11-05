@@ -1,6 +1,4 @@
 # difference in lists:
-
-
 list_1 = [1,3,5,7,9]
 list_2 = [1,2,4,6,7,8]
 differ_list = []
